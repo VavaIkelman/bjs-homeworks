@@ -20,7 +20,7 @@ let myName ;
 let message;
 function sayHello(userName) {
 	myName = userName;
-    message = `Привет, мир! Меня зовут ${myName}.`;
+    message = `Привет, мир! Меня зовут ${myName}`;
     
 	return message;
 }
