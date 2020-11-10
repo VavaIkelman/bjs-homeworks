@@ -14,21 +14,19 @@ else if (D > 0) {
 }
 
 function getAverageMark(marks){
-    let currentMarks = marks;
+    let allMarks = marks ;
     let n = marks.length;
-    let averageMark = 0;
+    let averageMark ;
     if (n == 0) {
         averageMark = 0;
     }
     else {
       let actualMarks =  marks.slice(0, 5);{
         let sumMarks = 0;
-        let countMarks = 0;
-        console.log(actualMarks);
-          for (let i = 0; i <= actualMarks.length; i++){
-              countMarks += 1;
+        
+          for (let i = 0; i <= actualMarks.length - 1; i++){
               sumMarks += actualMarks[i];
-              averageMark = sumMarks / countMarks;
+              averageMark = sumMarks / actualMarks.length;
           }
         } 
       }
