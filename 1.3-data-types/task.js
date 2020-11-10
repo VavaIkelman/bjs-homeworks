@@ -1,6 +1,13 @@
+"use strict";
 function calculateTotalMortgage(percent, contribution, amount, date) {
-    // код для задачи №1 писать здесь
-    // return totalAmount;
+    let p = percent, c = contribution, a = amount, d = date;
+    let S; //тело кредита
+    let P; // 1/12 процентной ставки(от 0 до 1)
+    let n; //количество выплачиваемых месяцев
+    let bodyCredit; //Тело кредита
+    let everyMonthPay;
+    let totalAmount;//
+    return totalAmount;
 }
 
 function getGreeting(name) {
