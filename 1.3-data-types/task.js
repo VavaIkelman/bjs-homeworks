@@ -9,7 +9,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     let  totalAmount = everyMonthPay * n;
     let percentOfCredit = totalAmount - S;
  
-    return totalAmount.toFixed(2);
+    return Number(totalAmount.toFixed(2));
 }
 
 function getGreeting(name) {
