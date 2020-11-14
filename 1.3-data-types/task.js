@@ -1,6 +1,6 @@
 "use strict";
 function calculateTotalMortgage(percent, contribution, amount, date) {
-    let p = percent, c = contribution, a = amount, d = date;
+    let p = new Number (percent), c = contribution, a = amount, d = date;
     let S = amount - contribution;
     let P = (p / 12) / 100; 
     let now = new Date(); 
