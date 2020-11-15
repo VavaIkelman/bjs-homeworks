@@ -49,14 +49,22 @@ const data = {
   function getAverageScore(data) {
 	for (let prop in data){
 		  let marks = data[prop];
-		  console.log(`${prop} : ` +  getAverageMark(marks)); 
-	  }
-  }
-	
+		  console.log(`${prop} : ` +  getAverageMark(marks));
+		    }
+        let allMarks = Object.values(data);
+        let sum = 0;
+        for (let i = 0; i < allMarks.length; i++ ){
+        sum += getAverageMark(allMarks[i]);
+        
+    }
+    let average = sum / allMarks.length;
+        console.log(`average : ${average}`);
+    }
+
 	function getAverageMark(mark) {
 		let total = 0;
 		for (let i = 0; i < mark.length; i++){
 		total += mark[i];
 		}
-		return (total / mark.length);
+	 return (total / mark.length);
 	}
