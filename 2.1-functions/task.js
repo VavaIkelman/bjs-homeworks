@@ -73,4 +73,27 @@ const data = {
       return 0
     }
 	 return (total / mark.length);
-	}
+	}	
+	
+	
+
+	let secretData = {};
+ 
+function getPersonData(secretData) {
+  for (let i = 0; i < secretData.length; i++){
+  }
+for (let prop in secretData){
+    let value = secretData[prop];
+    if (prop == 'aaa'){
+      prop = 'firstName';
+    } else if (prop == 'bbb'){
+      prop = 'lastName';
+    }
+  console.log( `${prop} : ` + getDecoderValue(value));
+ }
+}
+
+function getDecoderValue(secret) {
+let result = (secret === 0) ? 'Родриго' : 'Эмилио';
+return result
+ }
