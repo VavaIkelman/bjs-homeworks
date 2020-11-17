@@ -34,7 +34,7 @@ console.log(`Уравнение имеет один корень X = ${result.ro
 	}
 }
 
-const data = {
+let data = {
 	algebra : [4, 5, 5, 4],
 	geometry : [2, 5],
 	russian : [3, 3, 4, 5],
@@ -47,8 +47,8 @@ const data = {
   };
 
   function getAverageScore(data) {
-    if (data !== Object){
-      return {average: 0} 
+    if (data === {} ){
+      return { average: 0 } 
     }
 	for (let prop in data){
 		  let marks = data[prop];
@@ -61,7 +61,7 @@ const data = {
         
     }
     let average = sum / allMarks.length;
-        console.log(`average : ${average}`);
+        console.log(`average: ${average}`);
     } 
 
 	function getAverageMark(mark) {
@@ -69,11 +69,11 @@ const data = {
 		for (let i = 0; i < mark.length; i++){
 		total += mark[i];
 		}
-    if (mark !== Number){
+    if (mark == 0){
       return 0
     }
 	 return (total / mark.length);
-	}	
+	}
 	
 	
 
@@ -82,18 +82,18 @@ const data = {
 function getPersonData(secretData) {
   for (let i = 0; i < secretData.length; i++){
   }
-for (let prop in secretData){
+  for (let prop in secretData){
     let value = secretData[prop];
     if (prop == 'aaa'){
-      prop = 'firstName';
+      prop = 'firstName: ';
     } else if (prop == 'bbb'){
-      prop = 'lastName';
+      prop = 'lastName: ';
     }
-  console.log( `${prop} : ` + getDecoderValue(value));
+  console.log( `${prop}` + getDecodedValue(value));
  }
 }
 
-function getDecoderValue(secret) {
-let result = (secret === 0) ? 'Родриго' : 'Эмилио';
+function getDecodedValue(secret) {
+let result = (secret == 0) ? 'Родриго' : 'Эмильо';
 return result
  }
