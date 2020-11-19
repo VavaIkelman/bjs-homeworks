@@ -1,16 +1,16 @@
-const string = new String();
 
 String.prototype.isPalindrome = function () {
-    let lowerStr = this.toLowerCase();
-    let reversStr = this.split('').reverse().join('');
-    let result = (lowerStr === reversStr);
-    if (result == true){
-        console.log(`Строка ${lowerStr} является полиндромом`);
-    } else {
-        console.log(`Строка ${lowerStr} не является полиндромом`);
-    }
-    return result
-}
+    let str = this.toLowerCase().replace(/\s/g,'').split('').join('');
+    let strRevers = this.split('').reverse().join('').toLowerCase().replace(/\s/g,'');
+    let result = (str === strRevers);
+      if (result == true){
+          console.log(`Строка "${this}"" является полиндромом`);
+      } else {
+          console.log(`Строка "${this}"" не является полиндромом`);
+      }
+      return result
+  
+  }
 
 function getAverageMark(marks) {
     // код для задачи №2 писать здесь
