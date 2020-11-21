@@ -1,33 +1,27 @@
 
 String.prototype.isPalindrome = function () {
-    let str = this.toLowerCase().replace(/\s/g,'').split('').join('');
-    let strRevers = this.split('').reverse().join('').toLowerCase().replace(/\s/g,'');
-    let result = (str === strRevers);
-      if (result == true){
-          console.log(`Строка "${this}" является полиндромом`);
-      } else {
-          console.log(`Строка "${this}" не является полиндромом`);
-      }
-      return result
+    const str = this.toLowerCase().replace(/\s/g,'').split('').join('');
+    const strRevers = this.split('').reverse().join('').toLowerCase().replace(/\s/g,'');
+    return str === strRevers;
   
   }
 
   function getAverageMark(marks) {
-    let average = Array.from(marks);
+    const score= marks;
     let sum = 0;
-    if (marks == 0 || null || undefined){
+    if (!marks.length || !marks){
         return 0
     }
-  for (let i = 0; i < average.length; i++){
-    sum += average[i];
+  for (let i = 0; i < score.length; i++){
+    sum += score[i];
     }
-   return Math.round(sum / average.length);
+   return Math.round(sum / score.length);
 }
 
 
 function checkBirthday(birthday) {
-    let diff = Date.now() - Date.parse(birthday);
+    const diff = Date.now() - Date.parse(birthday);
     let age = Math.floor(diff / (365.25 * 24 * 60 * 60 * 1000));
-    let verdict = (age > 18) ?  true : false;
+    const verdict = (age > 18) ?  true : false;
      return verdict
 }
