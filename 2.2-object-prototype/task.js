@@ -27,7 +27,7 @@ String.prototype.isPalindrome = function () {
 
 function checkBirthday(birthday) {
     let diff = Date.now() - Date.parse(birthday);
-    let age = Math.round(diff / (365.25 * 24 * 60 * 60 * 1000));
-    let verdict = (age > 17) ?  "Да" : "Нет";
+    let age = Math.floor(diff / (365.25 * 24 * 60 * 60 * 1000));
+    let verdict = (age > 18) ?  true : false;
      return verdict
 }
