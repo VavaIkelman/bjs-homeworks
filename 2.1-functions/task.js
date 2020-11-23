@@ -47,6 +47,7 @@ let data = {
   };
 
   function getAverageScore(data) {
+	  const averageScore = {};
     if (data === {} ){
       return { average: 0 } 
     }
