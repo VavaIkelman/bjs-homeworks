@@ -47,22 +47,17 @@ let data = {
   };
 
   function getAverageScore(data) {
-	  const averageScore = {};
     if (data === {} ){
       return { average: 0 } 
     }
-	for (let prop in data){
+	  for (let prop in data){
 		  let marks = data[prop];
-		  console.log(`${prop} : ` +  getAverageMark(marks));
-		    }
+      let averageMarks = getAverageMark(marks);
+      data[prop] = averageMarks;
+       }
         let allMarks = Object.values(data);
-        let sum = 0;
-        for (let i = 0; i < allMarks.length; i++ ){
-        sum += getAverageMark(allMarks[i]);
-        
-    }
-    let average = sum / allMarks.length;
-        console.log(`average: ${average}`);
+        data[`average`] = getAverageMark(allMarks);
+        return data
     } 
 
 	function getAverageMark(mark) {
@@ -80,21 +75,20 @@ let data = {
 
 	let secretData = {};
  
-function getPersonData(secretData) {
-  for (let i = 0; i < secretData.length; i++){
-  }
-  for (let prop in secretData){
-    let value = secretData[prop];
-    if (prop == 'aaa'){
-      prop = 'firstName: ';
-    } else if (prop == 'bbb'){
-      prop = 'lastName: ';
-    }
-  console.log( `${prop}` + getDecodedValue(value));
- }
-}
-
-function getDecodedValue(secret) {
-let result = (secret == 0) ? 'Родриго' : 'Эмильо';
-return result
- }
+	function getPersonData(secretData) {
+	  for (let key in secretData){
+		let value = secretData[key];
+		if (key === 'aaa'){
+		  key = 'firstName'
+		}
+		if (key === 'bbb'){
+		  key = 'lastName'
+		}
+		console.log(key + ` : ` + getDecodedValue(value))
+	  }
+	}
+	
+	function getDecodedValue(secret) {
+	let result = (secret == 0) ? 'Родриго' : 'Эмильо';
+	return result
+	}
