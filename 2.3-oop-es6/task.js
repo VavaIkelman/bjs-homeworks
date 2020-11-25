@@ -65,9 +65,28 @@ class PrintEditionItem {
         }
         addBook(object){
             if (object.state > 30) {
-            this.books.push(object);       
+            this.books.push(object); 
+            return this.books      
         }
-        return this.books
     }
+         
+    findBookBy(type, value) {
+        if (this.books.type === "value"){
+            return this.books.find(value);
+        } else {
+            return null
+        }
+    }
+        }
+            
+            
+    
+        // giveBookByName(bookName){
+            
+        //     for (let i in this.books){
+        //         bookName = this.books.name;
+        //         if (this.books[i] === )
+        //     }
+    //     }
 
-    }
+    // }
