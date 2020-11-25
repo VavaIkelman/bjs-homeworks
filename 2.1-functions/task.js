@@ -75,22 +75,26 @@ let data = {
 	
 	
 
-	let secretData = {};
- 
+	
 	function getPersonData(secretData) {
-	  for (let key in secretData){
-		let value = secretData[key];
-		if (key === 'aaa'){
-		  key = 'firstName'
-		}
-		if (key === 'bbb'){
-		  key = 'lastName'
-		}
-		console.log(key + ` : ` + getDecodedValue(value))
-	  }
-	}
+	  for (let prop in secretData){
+			let value = secretData[prop]; 
+            if (prop === 'aaa'){
+                    prop = 'firstName';
+                    delete secretData.aaa;
+     
+            }
+            if (prop === 'bbb'){
+                    prop = 'lastName';  
+                    delete secretData.bbb;
+            }
+       secretData[prop] = getDecodedValue(value);
+       }
+       return secretData
+	 }
+	
 	
 	function getDecodedValue(secret) {
-	let result = (secret == 0) ? 'Родриго' : 'Эмильо';
+	let result = (secret == 0) ? "Родриго" : "Эмильо";
 	return result
 	}
