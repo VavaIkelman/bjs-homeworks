@@ -46,24 +46,17 @@ let data = {
 	french : [4, 4] 
   };
 
-  function getAverageScore(data) {
-	  const averageScore = {};
+ 
+
+	 function getAverageScore(data) {
     if (data === {} ){
       return { average: 0 } 
-    }
-	for (let prop in data){
-		  let marks = data[prop];
-		  console.log(`${prop} : ` +  getAverageMark(marks));
-		    }
-        let allMarks = Object.values(data);
-        let sum = 0;
-        for (let i = 0; i < allMarks.length; i++ ){
-        sum += getAverageMark(allMarks[i]);
-        
-    }
-    let average = sum / allMarks.length;
-        console.log(`average: ${average}`);
-    } 
+      }
+      for (let prop in data){
+          const marks = data[prop];
+          console.log(`${prop} : ` +  getAverageMark(marks));
+      }     
+  }  
 
 	function getAverageMark(mark) {
     let total = 0;
