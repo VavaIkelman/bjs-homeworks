@@ -68,6 +68,18 @@ class PrintEditionItem {
             this.books.push(object);       
         }
         return this.books
-    }
+        }
+        findBookBy(type, value){
+            
+            for (let key in this.book){
+              
+                if (type === this.books.key && value === this.books[key])
+                let findBook = this.books.find(type, value){
+                    return findBook
+                
+            }
+
+            } 
+        }
 
     }
