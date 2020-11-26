@@ -60,26 +60,34 @@ class PrintEditionItem {
     class Library{
         constructor(name){
             this.name = name;
-            this.books = [];
-            
+            this.books = [];  
         }
+
         addBook(object){
             if (object.state > 30) {
-            this.books.push(object);       
-        }
-        return this.books
-        }
-        findBookBy(type, value){
-            
-            for (let key in this.book){
-              
-                if (type === this.books.key && value === this.books[key])
-                let findBook = this.books.find(type, value){
-                    return findBook
-                
+                this.books.push(object); 
+                return this.books      
             }
-
-            } 
         }
+         
+        findBookBy(type, value) {
+            for (let i = 0; i < this.books.length; i++){
+                if (this.books[i][type] === value){
+                        return this.books[i]
+                    } 
+                }
+            }
+               
+        
+        
+giveBookByName(bookName){
+for (let i = 0; i < this.books.length; i++){
+    let bookName = this.books[i].name;
+}
+}
+}
 
-    }
+            
+            
+    
+        
