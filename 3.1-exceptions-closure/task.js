@@ -16,32 +16,41 @@ function validateCount(x) {
 
 class Triangle{
     constructor(a, b, c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-      if ( ((this.a + this.b) > this.c) && ((this.a + this.c) > this.b) && ((this.b + this.c) > this.a) ) {
-          throw e = new Error(`Треугольник с такими сторонами не существует`);
-          return e;
-      }
+      this.a = a;
+      this.b = b;
+      this.c = c;
+      if ( a + b <= c || a + c <= b || b + c <= a ) 
+          throw new Error(`Треугольник с такими сторонами не существует`);
     }
-    getPerimeter(a, b, c) {
+
+    getPerimeter() {
         return this.a + this.b + this.c
     }
-    getArea(a, b, c) {
-        let p = (getPerimeter(a, b, c) / 2 );
+
+    getArea() {
+        let p = (this.getPerimeter() / 2 );
         let s = Math.sqrt( p * (p - this.a) * (p - this.b) * (p - this.c));
         return s.toFixed(3)
     }
 }
+
+
 function getTriangle(a, b, c) {
 try {
     new Triangle(a, b, c);
 } catch (e){
-// this.getPerimeter(){
-//     return `Ошибка! Треушольник не существует`
-// }
-// this.getArea(){
-//     return `Ошибка! Треушольник не существует`
-// }
+this.getPerimeter();    
+this.getArea();
+return `Ошибка! Треугольник не существует`
 }
 }
+
+
+// function getTriangle(a, b, c) {
+
+//     new Triangle(a, b, c);
+//     this.getPerimeter();
+//     this.getArea();
+ 
+  
+// }
