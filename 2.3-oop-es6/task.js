@@ -53,7 +53,7 @@ class PrintEditionItem {
     class FantasticBook extends Book{
         constructor(author, name, releaseDate, pagesCount){
             super(author, name, releaseDate, pagesCount);
-            this.type = 'fantastiс';
+            this.type = 'fantastic';
         }       
     }
 
@@ -89,8 +89,8 @@ class PrintEditionItem {
         giveBookByName(bookName){
             for (let i in this.books) {
                 if (this.books[i].name === bookName){
-                   this.books.splice(i, 1);
-                   return this.books[i]
+                   let removedBook = this.books.splice(i, 1);
+                   return removedBook;
                 } 
             }
           return null
@@ -108,11 +108,12 @@ class PrintEditionItem {
     addGrade(grade, subject) {
       if (grade > 0 && grade <= 5){
        this.subject.push(grade);
-       return this.subject.length
-       }
-     console.log(`Вы пытались поставить оценку "${grade} "по предмету ${subject}"`); 
+       } else {
+        console.log(`Вы пытались поставить оценку "${grade} "по предмету ${subject}"`); 
+       } 
      return this.subject.length
     }
+    
    }
 
 
