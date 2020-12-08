@@ -90,31 +90,52 @@ class PrintEditionItem {
             for (let i in this.books) {
                 if (this.books[i].name === bookName){
                    let removedBook = this.books.splice(i, 1);
-                   return removedBook;
+                   return removedBook[0];
                 } 
             }
           return null
         }
    }
 
-   class StudentLog{
-    constructor (name){
-        this.name = name;
-        this.subject = [];
+   class StudentLog {
+    constructor(name) {
+      this.name = name;
+      this.marks = {};
     }
-    getName(){
-        return this.name
+    getName() {
+      return this.name
     }
+  
     addGrade(grade, subject) {
-      if (grade > 0 && grade <= 5){
-       this.subject.push(grade);
-       } else {
-        console.log(`Вы пытались поставить оценку "${grade} "по предмету ${subject}"`); 
-       } 
-     return this.subject.length
+      if (grade > 0 && grade <= 5) {
+        this.marks[subject] || (this.marks[subject] = []);
+        this.marks[subject].push(grade);
+      } else {
+        console.log(`Вы пытались поставить оценку "${grade} "по предмету ${subject}"`);
+      }
+      
+      return (this.marks[subject] || { length: 0 }).length;
     }
-    
-   }
+    getAverageBySubject(subject){
+      if (!subject || !this.marks[subject]){
+        return 0
+      }
+      let sum = 0;
+      for (let i = 0; i < this.marks[subject].length; i++){
+        sum += this.marks[subject][i]; 
+      }
+      return sum / this.marks[subject].length;
+      }
+      
+      getTotalAverage(){
+        let sum = 0;
+        let n = this.marks.length;
+        for (let i = 0; i < n; i++) {
+          sum += getAverageBySubject(Object.keys(this.marks)[i]);
+        }
+       return sum / this.marks.length
+       }
+  }
 
 
             
