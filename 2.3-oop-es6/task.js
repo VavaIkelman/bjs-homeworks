@@ -129,11 +129,12 @@ class PrintEditionItem {
       
       getTotalAverage(){
         let sum = 0;
-        let n = this.marks.length;
+        let n = Object.keys(this.marks).length;
         for (let i = 0; i < n; i++) {
-          sum += getAverageBySubject(Object.keys(this.marks)[i]);
+          let subject = Object.keys(this.marks);
+          sum += this.getAverageBySubject(subject[i]);
         }
-       return sum / this.marks.length
+       return sum / n
        }
   }
 
